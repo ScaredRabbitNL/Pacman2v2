@@ -1,10 +1,23 @@
 import { Application, Graphics } from 'pixi.js';
-import { Point, Wall } from './app/objects'
+import { Button } from '@pixi/ui';
+import { Point, Wall } from './app/Objects'
 
 let levels : number[] = [1];
 let sounds = ["main", "death"];
 let walls: Wall[] = [];
-let font;
+export let font : any;
+let gui;
+
+let gameStarted = false;
+let gameOver = false;
+
+let pacmanTextures = {};
+let ghostTextures = {};
+const sbtn = new Button(new Graphics().rect(0, 0, 100, 50).fill(0xFFFFFF));
+
+export let startTime = 0;
+export let elapsedTime = 0;
+export let stopwatchRunning = false;
 
 // Asynchronous IIFE
 (async () => {
@@ -16,3 +29,16 @@ let font;
 
 
 })();
+
+
+export function setStartTime(value: number) {
+  startTime = value;
+}
+
+export function setStopwatchRunning(value: boolean) {
+  stopwatchRunning = value;
+}
+
+export function getFont() {
+  return font;
+}

@@ -1,3 +1,3 @@
-export * from './objects/point'
-export * from './objects/wall'
+export * from './objects/Point'
+export * from './objects/Wall'
 
