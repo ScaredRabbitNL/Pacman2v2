@@ -12,7 +12,7 @@ export class Point {
 
     draw(app: Application, graphics: Graphics) {
         graphics.circle(this.x, this.y, 2);
-        graphics.fill(0xffcc00, 1);
+        graphics.fill({color: 0xffcc00, alpha: 1});
         app.stage.addChild(graphics);
     }
 

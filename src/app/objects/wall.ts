@@ -1,8 +1,8 @@
 import { Application, Graphics } from "pixi.js";
 
 export class Wall {
-    x: number;
-    y: number;
+    xPosition: number;
+    yPosition: number;
     width: number;
     height: number;
     isSegmented: boolean;
@@ -11,8 +11,8 @@ export class Wall {
     app: Application;
 
     constructor(x: number, y: number, width: number, height: number, isSegmented = false, app: Application) {
-        this.x = x;
-        this.y = y;
+        this.xPosition = x;
+        this.yPosition = y;
         this.width = width;
         this.height = height;
         this.isSegmented = isSegmented; 
@@ -40,7 +40,7 @@ export class Wall {
                 this.view.rect(segment.x, segment.y, segment.width, segment.height);
             }
         } else {
-            this.view.rect(this.x, this.y, this.width, this.height);
+            this.view.rect(this.xPosition, this.yPosition, this.width, this.height);
         }
         this.view.fill(); 
     }
@@ -75,4 +75,8 @@ export class WallSegment {
         this.view.x = this.x;
         this.view.y = this.y;
     }
+}
+
+export default class WallPositionModifier {
+
 }
